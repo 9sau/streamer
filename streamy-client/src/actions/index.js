@@ -8,7 +8,7 @@ import {
   DELETE_STREAM
 } from './types';
 import streams from '../apis/streams';
-
+import history from '../history';
 export const signIn = userId => {
   return {
     type: SIGN_IN,
@@ -32,6 +32,7 @@ export const createStream = formValues => async (dispatch, getState) => {
     type: CREATE_STREAM,
     payload: response.data
   });
+  history.push('/');
 };
 
 export const getStream = id => async dispatch => {
@@ -56,6 +57,7 @@ export const updateStream = (id, formValues) => async dispatch => {
     type: UPDATE_STREAM,
     payload: response.data
   });
+  history.push('/');
 };
 
 export const deleteStream = id => async dispatch => {
