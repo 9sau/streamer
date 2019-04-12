@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { getStreams } from "../../actions";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getStreams } from '../../actions';
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class StreamList extends React.Component {
       return (
         <div className="extra content">
           <div className="ui three buttons centered">
-            <Link to={`streams/${id}`} className="ui basic blue button">
+            <Link to={`stream/edit/${id}`} className="ui basic blue button">
               Edit
             </Link>
             <button className="ui basic red button">Delete</button>
