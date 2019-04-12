@@ -8,27 +8,29 @@ class StreamList extends React.Component {
     this.props.getStreams();
   }
 
-  renderActionButtons(id) {
-    if (this.props.currentUser === id)
+  renderActionButtons({ id, userId }) {
+    if (this.props.currentUser === userId)
       return (
         <div className="extra content">
           <div className="ui three buttons centered">
-            <button className="ui basic blue button">Edit</button>
+            <Link to={`streams/${id}`} className="ui basic blue button">
+              Edit
+            </Link>
             <button className="ui basic red button">Delete</button>
           </div>
         </div>
       );
   }
   renderStreams() {
-    return this.props.streams.map(({ id, title, description, userId }) => {
+    return this.props.streams.map(stream => {
       return (
-        <div className="column" key={id}>
+        <div className="column" key={stream.id}>
           <div className="ui raised fluid card">
             <div className="content">
-              <div className="header">{title}</div>
-              <div className="description">{description}</div>
+              <div className="header">{stream.title}</div>
+              <div className="description">{stream.description}</div>
             </div>
-            {this.renderActionButtons(userId)}
+            {this.renderActionButtons(stream)}
           </div>
         </div>
       );
