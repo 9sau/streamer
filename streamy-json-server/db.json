@@ -9,6 +9,24 @@
       "title": "Stream2",
       "description": "This is stream 2",
       "id": 2
+    },
+    {
+      "title": "Stream 3",
+      "description": "This is stream 4",
+      "user_id": "116445825922705989639",
+      "id": 3
+    },
+    {
+      "title": "Stream 3",
+      "description": "This is stream 3",
+      "user_id": "116445825922705989639",
+      "id": 4
+    },
+    {
+      "title": "Stream 5",
+      "description": "This is my stream!",
+      "userId": "116445825922705989639",
+      "id": 5
     }
   ]
 }
