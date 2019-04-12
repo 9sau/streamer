@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getStreams } from "../../actions";
 
@@ -34,15 +35,30 @@ class StreamList extends React.Component {
     });
   }
 
+  renderCreateStreamButton = () => {
+    if (this.props.isSignedIn)
+      return (
+        <Link to="/stream/new">
+          <button className="ui button positive">Create Stream</button>
+        </Link>
+      );
+  };
   render() {
-    return <div className="ui three column grid">{this.renderStreams()}</div>;
+    return (
+      <div>
+        <h2>Available Streams</h2>
+        <div className="ui three column grid">{this.renderStreams()}</div>
+        {this.renderCreateStreamButton()}
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
     streams: Object.values(state.streams),
-    currentUser: state.auth.userId
+    currentUser: state.auth.userId,
+    isSignedIn: state.auth.isSignedIn
   };
 };
 export default connect(
