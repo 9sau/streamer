@@ -5,6 +5,7 @@ import StreamEdit from './stream/StreamEdit';
 import StreamCreate from './stream/StreamCreate';
 import StreamWatch from './stream/StreamWatch';
 import StreamUpdate from './stream/StreamUpdate';
+import StreamDelete from './stream/StreamDelete';
 import Header from './Header';
 import history from '../history';
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/stream/view" exact component={StreamWatch} />
         <Route path="/stream/update" exact component={StreamUpdate} />
         <Route path="/stream/edit/:id" exact component={StreamEdit} />
+        <Route path="/stream/delete/:id" exact component={StreamDelete} />
       </Router>
     </div>
   );
