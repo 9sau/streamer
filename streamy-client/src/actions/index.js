@@ -6,8 +6,8 @@ import {
   GET_STREAMS,
   UPDATE_STREAM,
   DELETE_STREAM
-} from "./types";
-import streams from "../apis/streams";
+} from './types';
+import streams from '../apis/streams';
 
 export const signIn = userId => {
   return {
@@ -24,7 +24,7 @@ export const signOut = () => {
 
 export const createStream = formValues => async (dispatch, getState) => {
   const userId = getState().auth.userId;
-  const response = await streams.post("/streams", {
+  const response = await streams.post('/streams', {
     ...formValues,
     userId
   });
@@ -43,15 +43,15 @@ export const getStream = id => async dispatch => {
 };
 
 export const getStreams = () => async dispatch => {
-  const response = await streams.get("/streams");
+  const response = await streams.get('/streams');
   dispatch({
     type: GET_STREAMS,
     payload: response.data
   });
 };
 
-export const updateStream = id => async dispatch => {
-  const response = await streams.put(`/streams/${id}`);
+export const updateStream = (id, formValues) => async dispatch => {
+  const response = await streams.patch(`/streams/${id}`, formValues);
   dispatch({
     type: UPDATE_STREAM,
     payload: response.data
