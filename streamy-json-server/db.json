@@ -24,9 +24,21 @@
     },
     {
       "title": "Stream 5",
-      "description": "This is my stream!",
+      "description": "This is my stream 5!",
       "userId": "116445825922705989639",
       "id": 5
+    },
+    {
+      "title": "Stream 6",
+      "description": "This is amazing!",
+      "userId": "116445825922705989639",
+      "id": 6
+    },
+    {
+      "title": "Stream 7",
+      "description": "Testing navigation with create Stream",
+      "userId": "116445825922705989639",
+      "id": 7
     }
   ]
 }
