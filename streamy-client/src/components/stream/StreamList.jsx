@@ -29,7 +29,9 @@ class StreamList extends React.Component {
         <div className="column" key={stream.id}>
           <div className="ui raised fluid card">
             <div className="content">
-              <div className="header">{stream.title}</div>
+              <div className="header">
+                <Link to={`/stream/view/${stream.id}`}>{stream.title}</Link>
+              </div>
               <div className="description">{stream.description}</div>
             </div>
             {this.renderActionButtons(stream)}
